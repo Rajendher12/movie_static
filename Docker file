@@ -1,0 +1,8 @@
+FROM ubuntu
+LABEL maintainer address "raju"
+RUN apt update
+RUN apt install apache2 -y
+WORKDIR /var/www
+COPY . html
+CMD ["apachectl","-D","FOREGROUND"]
+EXPOSE 80
